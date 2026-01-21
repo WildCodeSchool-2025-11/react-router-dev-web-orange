@@ -1,11 +1,16 @@
-import React from 'react'
+import {useState} from 'react'
 
 const Contact = () => {
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [message, setMessage] = useState('')
+
   return (
     <div>Contact
     <form>
         <label>Nom</label>
-        <input type="text" name="name" />
+        <input type="text" name="name" value={name} onChange={e => setName(e.target.value)} />
         <label>Email</label>
         <input type="email" name="email" />
         <label>Message</label>
